@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+  <title>NetSnap</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <span class="logo">&#9889; NetSnap</span>
+    </header>
+
+    <!-- Guide shown when DevTools is not open -->
+    <div id="guide" class="guide hidden">
+      <p>Open DevTools (F12) to capture network requests.</p>
+    </div>
+
+    <!-- Main content -->
+    <div id="main" class="main hidden">
+      <!-- Filter -->
+      <div class="filter-bar">
+        <input
+          id="filterInput"
+          type="text"
+          placeholder="Filter by path..."
+          class="filter-input"
+        >
+      </div>
+
+      <!-- Type filter buttons -->
+      <div class="type-filter" id="typeFilter">
+        <button class="type-btn active" data-type="all">All</button>
+        <button class="type-btn" data-type="fetch_xhr">Fetch/XHR</button>
+        <button class="type-btn" data-type="stylesheet">CSS</button>
+        <button class="type-btn" data-type="script">JS</button>
+        <button class="type-btn" data-type="font">Font</button>
+        <button class="type-btn" data-type="image">Img</button>
+        <button class="type-btn" data-type="media">Media</button>
+        <button class="type-btn" data-type="manifest">Manifest</button>
+        <button class="type-btn" data-type="websocket">Socket</button>
+        <button class="type-btn" data-type="wasm">WASM</button>
+        <button class="type-btn" data-type="document">Doc</button>
+        <button class="type-btn" data-type="other">Other</button>
+      </div>
+
+      <!-- Request list -->
+      <div class="request-list" id="requestList"></div>
+
+      <!-- Load more -->
+      <button id="loadMoreBtn" class="load-more-btn hidden">Load more</button>
+
+      <!-- Selection info & actions -->
+      <div class="actions-bar">
+        <div class="selection-info">
+          <label class="select-all-label">
+            <input type="checkbox" id="selectAll"> Select all
+          </label>
+          <span id="selectionCount">Selected: 0</span>
+        </div>
+        <div class="har-actions">
+          <button id="copyHarBtn" class="btn btn-primary">Copy as HAR</button>
+          <button id="downloadHarBtn" class="btn btn-secondary">Download HAR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screenshot section -->
+    <div class="screenshot-section">
+      <div class="screenshot-actions">
+        <button id="captureBtn" class="btn btn-secondary">Capture screenshot</button>
+        <button id="copyScreenshotBtn" class="btn btn-secondary" disabled>Copy screenshot</button>
+      </div>
+      <div id="screenshotPreview" class="screenshot-preview hidden">
+        <img id="screenshotImg" alt="Screenshot preview">
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "NetSnap",
+  "version": "1.0.0",
+  "description": "Pick individual network requests and copy or download them as HAR. No more exporting everything — select only what you need.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "devtools_page": "devtools.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

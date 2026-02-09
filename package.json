@@ -1,0 +1,7 @@
+{
+  "name": "netsnap",
+  "private": true,
+  "devDependencies": {
+    "vitest": "^3.0.5"
+  }
+}
