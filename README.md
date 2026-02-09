@@ -4,6 +4,10 @@ A Chrome extension that captures network requests in HAR format and takes screen
 
 Chrome DevTools lets you export all requests as HAR, but there is no built-in way to export just a few selected requests. NetSnap solves this by letting you pick exactly the requests you need and copy or download them as a standard HAR file.
 
+<p align="center">
+  <img src="assets/screenshot.png" width="600" alt="NetSnap UI" />
+</p>
+
 ## Features
 
 - **Network Request Capture** — Records HTTP/HTTPS requests via Chrome DevTools API in real-time
